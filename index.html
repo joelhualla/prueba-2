@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora Financiera - 3 Pasos</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="container">
+        
+        <h1 class="main-title">Calculadoras Financieras</h1>
+
+        <div class="tabs">
+            <button class="tab active">Gastos hormiga</button>
+            
+        </div>
+
+        <div id="step-1" class="step active-step">
+            <p class="step-indicator">Paso 1 de 3</p>
+
+            <div class="image-section">
+                <div class="illustration-placeholder"></div>
+            </div>
+
+            <p class="description">
+                Los gastos hormiga son pequeñas compras que parecen no afectar a tu economía pero al sumarlas representan un gasto importante. Descubre cuánto gastas en ellas y aprende a evitarlas.
+            </p>
+
+            <div class="input-section">
+                <input type="number" id="monthly-income" placeholder="Ingresos mensuales" class="text-input" min="0">
+            </div>
+
+            <button class="main-button" onclick="nextStep(1)">Continuar</button>
+        </div>
+
+
+        <div id="step-2" class="step">
+            <p class="step-indicator">Paso 2 de 3</p>
+            <h2 class="step-title">Agrega tus gastos</h2>
+
+            <a href="#" id="add-expense-btn" class="add-link">+ agregar otro</a>
+
+            <div id="expenses-container">
+                </div>
+
+            <div class="total-summary">
+                <span class="total-label">Total</span>
+                <div class="total-values">
+                    <span class="total-period">Semanal: <span id="total-weekly-2">CL0.00</span></span>
+                    <span class="total-period total-red">Mensual: <span id="total-monthly-2">CL0.00</span></span>
+                    <span class="total-period">Anual: <span id="total-annual-2">CL0.00</span></span>
+                </div>
+            </div>
+
+            <button class="main-button" onclick="nextStep(2)">Continuar</button>
+        </div>
+
+
+        <div id="step-3" class="step">
+            <p class="step-indicator">Paso 3 de 3</p>
+            
+            <p class="result-category">Eres una hormiga:</p>
+            <h2 id="result-title" class="result-headline">Gastadora</h2>
+            <p id="result-message" class="result-text">¡Fumiga estos gastos! Tus gastos hormiga están elevados</p>
+            
+            <p class="result-percentage-label">Representa un:</p>
+            <h2 class="result-percentage"><span id="result-percent">0%</span></h2>
+            <p class="result-percentage-label">de tus ingresos mensuales.</p>
+
+            <div class="chart-area">
+                <div id="pie-chart" class="pie-chart"></div>
+                <div class="legend">
+                    <div class="legend-item"><span class="color-dot income-dot"></span> Ingreso mensual</div>
+                    <div class="legend-item"><span class="color-dot expense-dot"></span> Gastos mensuales</div>
+                </div>
+            </div>
+
+            
+
+            <p class="footer-note">
+                Recuerda que estos gastos pueden representar una parte importante de tu presupuesto. Empieza
+            </p>
+        </div>
+        
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

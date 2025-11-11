@@ -1,0 +1,201 @@
+/* ---------------------------------------------------- */
+/* 1. Estilos Base y Reseteo */
+/* ---------------------------------------------------- */
+
+/* Configuración de la fuente y centrado del contenido en la pantalla */
+body {
+    /* ... otras propiedades ... */
+
+    /* 1. Define la imagen de fondo. Reemplaza 'ruta/a/tu/imagen.jpg' por la ubicación real de tu archivo. */
+    background-image: url(temuco.jpg); 
+
+    /* 2. Controla la repetición: 'no-repeat' es común para fondos grandes que deben cubrir la pantalla una sola vez. */
+    background-repeat: no-repeat;
+
+    /* 3. Controla la posición: 'center center' centra la imagen horizontal y verticalmente. */
+    background-position: center center;
+
+    /* 4. Controla el tamaño: 'cover' asegura que la imagen cubra todo el body sin dejar espacios, aunque se pueda recortar. */
+    background-size: cover;
+
+    /* 5. Fija la imagen: 'fixed' hace que la imagen no se mueva al hacer scroll, creando un efecto de paralaje suave (opcional). */
+    background-attachment: fixed;
+
+    /* Centrado del contenido (importante para que la calculadora aparezca en el centro) */
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Centra verticalmente */
+    min-height: 100vh;
+    margin: 0;
+}
+
+/* Contenedor principal: simula un diseño centrado y optimizado para móvil */
+.container {
+    background-color: white;
+    width: 100%;
+    max-width: 450px; 
+    text-align: center;
+    padding: 20px 0;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); 
+    border-radius: 25px;
+}
+
+/* ---------------------------------------------------- */
+/* 2. Control de Pasos y Navegación */
+/* ---------------------------------------------------- */
+
+/* Estilo por defecto: oculta todos los pasos */
+.step {
+    display: none;
+    padding: 0 20px;
+}
+
+/* La clase 'active-step' hace visible el paso actual */
+.active-step {
+    display: block;
+}
+
+.main-title {
+    color: #E91E63; /* Color rosa principal */
+    font-size: 1.8em;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.tabs {
+    display: flex;
+    justify-content: center;
+    gap: 8px; 
+    margin-bottom: 10px;
+    padding: 0 10px;
+}
+
+/* Estilo general de las pestañas */
+.tab {
+    /* ... estilos de forma y tipografía ... */
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    background-color: white;
+    color: #999;
+    white-space: nowrap;
+    cursor: pointer;
+}
+
+/* Estilo para la pestaña ACTIVA (fondo rosa) */
+.tab.active {
+    background-color: #E91E63;
+    color: white;
+    border-color: #E91E63;
+}
+
+/* Botón principal "Continuar" */
+.main-button {
+    background-color: #f0f0f5; 
+    border: none;
+    border-radius: 25px; /* Bordes muy redondeados */
+    width: 90%;
+    padding: 15px 0;
+    font-weight: 700;
+    cursor: pointer;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+/* ---------------------------------------------------- */
+/* 3. Estilos de Formularios y Totales (Paso 1 y 2) */
+/* ---------------------------------------------------- */
+
+/* Input de texto (Ingresos o Gastos) */
+.text-input {
+    width: 100%; 
+    box-sizing: border-box; 
+    padding: 15px 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    text-align: left;
+    outline: none;
+}
+
+/* Enlace "+ agregar otro" */
+.add-link {
+    color: #E91E63;
+    text-decoration: none;
+    font-weight: 700;
+    display: block;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+/* Contenedor de cada gasto individual */
+.expense-item {
+    display: flex; /* Para alinear ícono, input y botón de eliminar */
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    padding-left: 10px;
+    text-align: center;
+
+}
+
+.expense-icon::before {
+    content: "🚬"; /* Usamos un emoji como ícono simple */
+}
+
+/* Botón de eliminar gasto */
+.delete-btn::before {
+    content: "🗑️"; /* Icono de bote de basura */
+    color: #E91E63;
+    cursor: pointer;
+}
+
+/* Resumen de totales (Semanal, Mensual, Anual) */
+.total-summary {
+    text-align: left;
+    margin-top: 30px;
+    padding-left: 20px;
+    text-align: center;
+}
+
+.total-label {
+    color: #E91E63;
+    font-weight: 700;
+}
+
+.total-red {
+    color: #E91E63; /* Destaca el total mensual */
+    font-weight: 700;
+}
+
+/* ---------------------------------------------------- */
+/* 4. Estilos de Resultados y Gráfico (Paso 3) */
+/* ---------------------------------------------------- */
+
+.result-headline {
+    font-size: 2em;
+    color: #E91E63; /* Color inicial. JS lo cambiará a rojo si los gastos son altos */
+    margin-bottom: 5px;
+}
+
+.result-percentage {
+    font-size: 2.5em;
+    color: red; /* Color rojo para destacar el porcentaje */
+    font-weight: 700;
+    margin: 5px 0;
+}
+
+/* Gráfico Circular (Simulación) */
+.pie-chart {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    /* Estilo inicial que JS sobrescribirá para simular el gráfico */
+    background: conic-gradient(
+        #E91E63 0%, 
+        red 0%      
+    );
+    margin-bottom: 20px;
+}
+
+/* Puntos de color en la leyenda */
+.income-dot { background-color: #E91E63; } 
+.expense-dot { background-color: red; }
